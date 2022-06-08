@@ -11,12 +11,12 @@ console.log("04. Пошук логіна в масиві");
  * - Метод includes() с тернарным оператором
  */
 
-const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
-const loginToFind = 'aj4xth3m4n';
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+// const loginToFind = 'aj4xth3m4n';
 
 // Через for
 
-let massege = `Користувача ${loginToFind} не знайдено`;
+// let massege = `Користувача ${loginToFind} не знайдено`;
 // for (let i = 0; i < logins.length; i += 1){
 //     const login = logins[i];
 
@@ -66,3 +66,46 @@ let massege = `Користувача ${loginToFind} не знайдено`;
 
 // const message = logins.includes(loginToFind) ? `Користувача ${loginToFind} знайдено.` : `Користувача ${loginToFind}  не знайдено.`;
 // console.log(message);
+
+
+// Мод 2 - Функції. Допрацювання, оптимазація завдань.
+
+
+// const logins = ['m4ngoDoge', 'k1widab3st', 'poly1scute', 'aj4xth3m4n'];
+
+
+//  // 1 варівант   через for...of
+// const findLogin = function (allLogins, loginToFind){
+//     for (const login of allLogins){
+//         if (login === loginToFind) {
+//             return `Користувача ${loginToFind} знайдено.`;
+//         }
+//     }
+//     return `Користувача ${loginToFind} не знайдено.`;
+// };
+
+//  // 2 варівант  через тернарник
+
+// const findLogin = function (allLogins, loginToFind){
+//     const message = allLogins.includes(loginToFind) 
+//     ? `Користувача ${loginToFind} знайдено.` 
+//     : `Користувача ${loginToFind}  не знайдено.`;
+//     return message
+// }
+
+//  // 3 варівант  ще коротший)))
+
+// const findLogin = function (allLogins, loginToFind){
+//     return allLogins.includes(loginToFind) 
+//     ? `Користувача ${loginToFind} знайдено.` 
+//     : `Користувача ${loginToFind}  не знайдено.`;
+// }
+
+// // переварка. 
+
+
+// console.log(findLogin(logins, 'effefe')); // false
+// console.log(findLogin(logins, 'poly1scute')); // true
+// console.log(findLogin(logins, 'p093er fe2 2fe')); // false
+// console.log(findLogin(logins, 'aj4xth3m4n')); // true
+
