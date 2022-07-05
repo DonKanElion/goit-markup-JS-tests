@@ -1,0 +1,307 @@
+console.log("Mod 4 tests");
+
+// 2. КОЛБЕК-ФУНКЦІЇ. Доповни функцію makeMessage таким чином, щоб вона очікувала другим параметром (параметр callback) колбек-функцію і повертала її виклик. Функція deliverPizza або makePizza буде передаватися як колбек і очікувати аргументом ім'я готової піци, що доставляється.
+
+
+// Before:
+
+// function deliverPizza(pizzaName) {
+//     return `Delivering ${pizzaName} pizza.`;
+//   }
+  
+//   function makePizza(pizzaName) {
+//     return `Pizza ${pizzaName} is being prepared, please wait...`;
+//   }
+  
+//   // Chande code below this line
+//   function makeMessage(pizzaName) {
+//     return;
+//   }
+  
+  // After: 
+
+  // function deliverPizza(pizzaName) {
+  //   return `Delivering ${pizzaName} pizza.`;
+  // }
+  
+  // function makePizza(pizzaName) {
+  //   return `Pizza ${pizzaName} is being prepared, please wait...`;
+  // }
+  
+  // // Chande code below this line
+  // function makeMessage(pizzaName, callback) {
+  //   return callback(pizzaName);
+  //   }
+  
+//  makeMessage("Royal Grand", makePizza) // //  рядок "Pizza Royal Grand is being prepared, please wait..."
+//  makeMessage("Ultracheese", deliverPizza) // //  рядок "Delivering Ultracheese pizza."
+
+// 3. ІНЛАЙН-КОЛБЕКИ. Доповни другий виклик функції makePizza(pizzaName, callback), передавши другим аргументом інлайн колбек-функцію eatPizza(pizzaName), яка логує рядок "Eating pizza <назва піци>".. 
+
+// function makePizza(pizzaName, callback) {
+//   console.log(`Pizza ${pizzaName} is being prepared, please wait...`);
+//   callback(pizzaName);
+// }
+
+// makePizza("Royal Grand", function deliverPizza(pizzaName) {
+//   console.log(`Delivering pizza ${pizzaName}.`);
+// });
+// // Change code below this line
+
+// makePizza("Ultracheese", function eatPizza(pizzaName){
+//   console.log("Eating pizza <назва піци>")
+// });
+
+// Example from the summary: 
+
+// function registerGuest(name, callback) {
+//   console.log(`Реєструємо гостя ${name}.`);
+//   callback(name);
+// }
+
+// ;// Передаємо інлайн функцію greet у якості колбека
+// registerGuest("Манго", function greet(name) {
+//   console.log(`Ласкаво просимо ${name}.`);
+// });
+
+// // Передаємо інлайн функцію notify у якості колбека
+// registerGuest("Полі", function notify(name) {
+//   console.log(`Шановний(а) ${name}, ваш номер буде готовий за 30 хвилин.`);
+// })
+
+// 4. ДЕКІЛЬКА КОЛБЕКІВ. Необхідно написати логіку обробки замовлення піци. Виконай рефакторинг методу order таким чином, щоб він приймав другим і третім параметром два колбеки onSuccess і onError.....
+
+// const pizzaPalace = {
+//   pizzas: ["Ultracheese", "Smoked", "Four meats"],
+//   order(pizzaName, makePizza, onOrderError ) {
+   
+//     if(this.pizzas.includes(pizzaName)){
+//       console.log("Ура!!! Ваше замовлення...");
+//       return makePizza(pizzaName);
+//     };
+
+//     console.log("Ех..помилка(( Спробуйте ще раз.");
+//     // callback(error);
+//     return onOrderError(`There is no pizza with a name ${pizzaName} in the assortment.`);
+//   },
+// };
+// // Change code above this line
+
+// // Callback for onSuccess
+// function makePizza(pizzaName) {
+//   return `Your order is accepted. Cooking pizza ${pizzaName}.`;
+// }
+
+// // Callback for onError
+// function onOrderError(error) {
+//   return `Error! ${error}`;
+// }
+
+// // Method calls with callbacks
+// pizzaPalace.order("Smoked", makePizza, onOrderError);
+// pizzaPalace.order("Four meats", makePizza, onOrderError);
+// pizzaPalace.order("Big Mike", makePizza, onOrderError);
+// pizzaPalace.order("Vienna", makePizza, onOrderError);
+
+// 5. МЕТОД FOREACH(CALLBACK). Функція calculateTotalPrice(orderedItems) приймає один параметр orderedItems - масив чисел, і розраховує загальну суму його елементів, яка зберігається у змінній totalPrice і повертається як результат роботи функції. Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach.
+
+function calculateTotalPrice(orderedItems) {
+  let totalPrice = 0;
+  // Change code below this line
+
+  orderedItems.forEach(function callback (element, index, array){
+    
+    totalPrice += element;
+  })
+  // Change code above this line
+  return totalPrice;
+}
+
+// 6. ЗАДАЧА. ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ. Функція filterArray(numbers, value) приймає масив чисел numbers і повертає новий масив, в якому будуть тільки ті елементи оригінального масиву, які більші за значення параметра value. Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach.
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   // Change code below this line
+
+//   numbers.forEach(function callback (element, index){
+
+//     if (element > value) {
+//       filteredNumbers.push(element);
+//     }
+//   })
+
+//   // for (let i = 0; i < numbers.length; i += 1) {
+//   //   if (numbers[i] > value) {
+//   //     filteredNumbers.push(numbers[i]);
+//   //   }
+//   // }
+
+//   return filteredNumbers;
+// }
+
+// filterArray([1, 2, 3, 4, 5], 4) //// [5]
+//filterArray([1, 2, 3, 4, 5], 5) //// []
+// filterArray([12, 24, 8, 41, 76], 38) //// [41, 76]
+
+// 7. ЗАДАЧА. СПІЛЬНІ ЕЛЕМЕНТИ. Функція getCommonElements(firstArray, secondArray) приймає два масиви довільної довжини в параметри firstArray і secondArray, і повертає новий масив їхніх спільних елементів, тобто тих, які присутні в обох масивах. Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach.
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//   firstArray.forEach(function callback(element){
+//        if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   })
+
+//   // for (let i = 0; i < firstArray.length; i += 1) {
+//   //   if (secondArray.includes(firstArray[i])) {
+//   //     commonElements.push(firstArray[i]);
+//   //   }
+//   // }
+
+//   return commonElements;
+//   // Change code above this line
+// }
+
+// getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]) ////  [12, 27, 3]
+// getCommonElements([10, 20, 30, 40], [4, 30, 17, 10, 40]) // // //  [10, 30, 40]
+
+// 8. СТРІЛОЧНІ ФУНКЦІЇ. Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона була оголошена як стрілочна.
+
+// Change code below this line
+
+// function calculateTotalPrice(quantity, pricePerItem) {
+//   // Change code above this line
+//   return quantity * pricePerItem;
+// }
+
+// // Before refactoring:
+
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   // Change code above this line
+//   return quantity * pricePerItem;
+// }
+
+// 9. НЕЯВНЕ ПОВЕРНЕННЯ. Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона використовувала неявне повернення. 
+
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   return quantity * pricePerItem;
+// };
+
+// // BEFORE refactoring: 
+
+// const calculateTotalPrice = (quantity, pricePerItem) =>  quantity * pricePerItem;
+
+// 10. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ. Виконай рефакторинг функції calculateTotalPrice(orderedItems), замінивши її оголошення на стрілочну функцію. Заміни колбек-функцію, передану в метод forEach(), на стрілочну функцію.
+
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach(function (item) {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+//  // BEFORE refactoring:
+
+// const calculateTotalPrice = orderedItems => {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach((item) => {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+
+// 11. ЗАДАЧА. ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ 2.0. Заміни оголошення функції filterArray() і колбек для методу forEach() на стрілочні функції.
+
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+
+//   numbers.forEach(function (number) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+//   return filteredNumbers;
+// }
+
+// // BEFORE refactoring:
+
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
+
+//   numbers.forEach( (number) => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+
+//   return filteredNumbers;
+// }
+
+// 12. ЗАДАЧА. СПІЛЬНІ ЕЛЕМЕНТИ 2.0. Заміни оголошення функції getCommonElements() і колбек для методу forEach() на стрілочні функції. 
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+
+//   firstArray.forEach(function (element) {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+
+//   return commonElements;
+// }
+
+// // Before refactoring:
+
+// const getCommonElements = (firstArray, secondArray) => {
+//   const commonElements = [];
+
+//   firstArray.forEach((element) => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+
+//   return commonElements;
+// }
+
+// 13. ЧИСТІ ФУНКЦІЇ. Функція changeEven(numbers, value) приймає масив чисел numbers і оновлює кожен елемент, значення якого - це парне число, додаючи до нього значення параметра value. Виконай рефакторинг функції таким чином, щоб вона стала чистою - не змінювала масив чисел numbers, а створювала, наповнювала і повертала новий масив з оновленими значеннями.
+
+// function changeEven(numbers, value) {
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       numbers[i] = numbers[i] + value;
+//     }
+//   }
+// }
+
+// Before refactoring:
+
+// function changeEven(numbers, value) {
+//   const newArray = [];
+//   numbers.forEach(element => {
+//     if ( element %  2 === 0) {
+//       newArray.push(element + value);
+//     } else {
+//       newArray.push(element);
+//     }
+//   });    
+//   return newArray;
+// }
+
+
+//  changeEven([17, 24, 68, 31, 42], 100) // //  новий масив [17, 124, 168, 31, 142]
+// changeEven([44, 13, 81, 92, 36, 54], 100) // //  новий масив [144, 13, 81, 192, 136, 154]
+
+// 14. МЕТОД MAP().Доповни код таким чином, щоб у змінній planetsLengths вийшов масив довжин назв планет. Обов'язково використовуй метод map().
+
+const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// Change code below this line
+const planetsLengths = planets;
