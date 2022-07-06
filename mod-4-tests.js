@@ -302,6 +302,169 @@ function calculateTotalPrice(orderedItems) {
 
 // 14. МЕТОД MAP().Доповни код таким чином, щоб у змінній planetsLengths вийшов масив довжин назв планет. Обов'язково використовуй метод map().
 
-const planets = ["Earth", "Mars", "Venus", "Jupiter"];
-// Change code below this line
-const planetsLengths = planets;
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// // Change code below this line
+// const planetsLengths = planets.map(planet => planet.length);
+
+// 15. МЕТОД MAP() І МАСИВ ОБ'ЄКТІВ. Використовуючи метод map(), зроби так, щоб у змінній titles вийшов масив назв книг (властивість title) з усіх об'єктів масиву books.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// // Change code below this line
+
+// const titles = books.map(book => book.title);
+// console.log(titles);
+
+
+// 16. МЕТОД FLATMAP(). Використовуючи метод flatMap(), зроби так, щоб у змінній genres вийшов масив усіх жанрів книг (властивість genres) з масиву книг books.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+// // Change code below this line
+
+// const genres = books.flatMap( book => book.genres);
+// console.log(genres);
+
+
+// 17.ЗАДАЧА. ІМЕНА КОРИСТУВАЧІВ. Доповни функцію getUserNames(users) таким чином, щоб вона повертала масив імен користувачів (властивість name) з масиву об'єктів в параметрі users.
+
+
+// const getUserNames = users => {
+//     const name = users.map(user => user.name);
+//     return name;
+// }
+
+
+// 18. ЗАДАЧА. ПОШТИ КОРИСТУВАЧІВ. Доповни функцію getUserEmails(users) таким чином, щоб вона повертала масив поштових адрес користувачів (властивість email) з масиву об'єктів в параметрі users.
+
+
+// const getUserEmails = users => {
+    
+//   const email = users.map(mail => mail.email);
+//   return email;
+// };
+
+// 19. МЕТОДИ FILTER І FIND. Доповни код таким чином, щоб у змінній evenNumbers утворився масив парних чисел з масиву numbers, а в змінній oddNumbers - масив непарних. Обов'язково використовуй метод filter().
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// // Change code below this line
+
+// console.log(numbers);
+
+// const evenNumbers = numbers.filter(number => number % 2 == 0);
+// console.log(evenNumbers);
+
+// const oddNumbers = numbers.filter(number => number % 2);
+// console.log(oddNumbers);
+
+// 20. ФІЛЬТРАЦІЯ УНІКАЛЬНИХ ЕЛЕМЕНТІВ. Доповни код таким чином, щоб у змінній allGenres був масив всіх жанрів книг (властивість genres) з масиву books, а у змінній uniqueGenres - масив унікальних жанрів, без повторень.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction", "mysticism"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism", "adventure"],
+//   },
+// ];
+// // Change code below this line
+// const allGenres = books.flatMap(book => book.genres);
+// console.log(allGenres);
+// const uniqueGenres = allGenres.filter(
+//   (genres, index, array) => array.indexOf(genres) === index
+// );
+// console.log(uniqueGenres);
+
+// 21. МЕТОД FILTER() І МАСИВ ОБ'ЄКТІВ. Використовуючи метод filter(), доповни код таким чином, щоб: У змінній topRatedBooks утворився масив книг, рейтинг яких (властивість rating) більший за або дорівнює значенню змінної MIN_RATING. у змінній booksByAuthor утворився масив книг, написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR.
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+
+
+// // Change code below this line
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// console.log(topRatedBooks);
+
+// const booksByAuthor = books.filter(book => book.author === AUTHOR);
+// console.log(booksByAuthor);
+
+
+// 22. ЗАДАЧА. КОРИСТУВАЧІ З КОЛЬОРОМ ОЧЕЙ.  Доповни функцію getUsersWithEyeColor(users, color) таким чином, щоб вона повертала масив користувачів, у яких колір очей (властивість eyeColor) збігається зі значенням параметра color.
+
+// const getUsersWithEyeColor = (users, color) => {
+ 
+//   const eyeColor = users.filter(user => user.eyeColor === color);
+//   return eyeColor;
+// };
+
+
+// 23. ЗАДАЧА. КОРИСТУВАЧІ У ВІКОВІЙ КАТЕГОРІЇ.  Доповни функцію getUsersWithAge(users, minAge, maxAge) таким чином, щоб вона повертала масив користувачів, вік яких (властивість age) потрапляє у проміжок від minAge до maxAge.
+
+
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//   const  ageFocus = users.filter(user => (user.age >= minAge && user.age <= maxAge))
+//   return ageFocus;
+// };
+
+// 24. ЗАДАЧА. КОРИСТУВАЧІ З ДРУГОМ. Доповни функцію getUsersWithFriend(users, friendName) таким чином, щоб вона повертала масив користувачів, у яких є один з ім'ям в параметрі friendName. Масив друзів користувача зберігається у властивості friends.
