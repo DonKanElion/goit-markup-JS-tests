@@ -1,5 +1,24 @@
 // Повторити рішення завдання!!!! 
+// mod. 2 - 18. ЗАДАЧА: СУМА ЧИСЕЛ (ЦИКЛ FOR). Напиши функцію calculateTotal(number), яка приймає ціле число (параметр number) і повертає суму всіх цілих чисел від одиниці і до цього числа. Наприклад, якщо number дорівнює 3, то сума - це 1 + 2 + 3, тобто 6.
 
+
+// function calculateTotal(number) {
+//     // Change code below this line
+//       let total = 0;
+  
+//         for (let i = 0; i <= number; total += i++){ 
+    
+//         }
+  
+//        return total;
+//    }
+  
+  
+  //  // Check:
+  //   calculateTotal(3) // повертає 6
+  //  calculateTotal(7) // повертає 28
+  //   calculateTotal(18) // повертає 171
+  
 
 
 

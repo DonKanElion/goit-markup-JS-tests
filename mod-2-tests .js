@@ -143,6 +143,17 @@ console.log('Mod 2 tests');
 // }
 
 
+// function getExtremeElements(array) {
+//   // Change code below this line
+//   const newArray = [];
+
+//     newArray.push(array[0],array[array.length -1]);
+//    return newArray;
+
+// }
+
+
+// 
 // 10. МЕТОД РЯДКІВ SPLIT(). Доповни код функції splitMessage(message, delimeter) таким чином, щоб вона повертала у змінній words результат поділу рядка message за роздільником delimeter - масив рядків.
 
 // function splitMessage(message, delimeter) {
@@ -152,6 +163,14 @@ console.log('Mod 2 tests');
 
 //   return words;
 // }
+
+///// AND
+
+// function splitMessage(message, delimeter) {
+
+//   return message.split(delimeter);  
+// }
+
 
 // // check:
 // Виклик splitMessage("Mango hurries to the train", " ") повертає ["Mango", "hurries", "to", "the", "train"]
@@ -169,6 +188,14 @@ console.log('Mod 2 tests');
 //   // Change code above this line
 // }
 
+/// AND 
+
+// function calculateEngravingPrice(message, pricePerWord) {
+
+// return message.split(" ").length * pricePerWord;
+
+// }
+
 // Check:
 
 // calculateEngravingPrice("JavaScript is in my blood", 10) // повертає 50
@@ -177,12 +204,8 @@ console.log('Mod 2 tests');
 // 12. МЕТОД МАСИВУ JOIN(). Доповни код функції makeStringFromArray(array, delimeter) таким чином, щоб вона повертала у змінній string результат з'єднання елементів масиву array з роздільником delimeter - рядок.
 
 // function makeStringFromArray(array, delimeter) {
-//   let string;
-//   string = array.join(delimeter);
-//   console.log(string);
 
-//   return string;
-
+//   return array.join(delimeter);
 // }
 
 // // check;
@@ -224,14 +247,14 @@ console.log('Mod 2 tests');
 // 16. ЗАДАЧА: КОМПОЗИЦІЯ МАСИВІВ. Напиши функцію makeArray(firstArray, secondArray, maxLength) для створення нового масиву з усіма елементами двох вихідних firstArray і secondArray. Параметр maxLength містить максимально допустиму довжину нового масиву.
 
 // function makeArray(firstArray, secondArray, maxLength) {
-//   // Change code below this line
+
 //  const allArray = firstArray.concat(secondArray); 
 //  const lengthArray = allArray.length;
 
 //  return lengthArray <= maxLength ? allArray : allArray.slice(0, maxLength);
- 
-//   // Change code above this line
+
 // }
+
 
 // // Check:
 
@@ -252,14 +275,16 @@ console.log('Mod 2 tests');
 
 
 // function calculateTotal(number) {
-//   // Change code below this line
+
 //     let total = 0;
 
-//       for (let i = 0; i <= number; total+=i++){ 
+//       for (let i = 0; i <= number; total += i++){ 
+//         console.log(total);
 //       }
 
 //      return total;
 //  }
+
 
 //  // Check:
 //   calculateTotal(3) // повертає 6
@@ -328,6 +353,21 @@ console.log('Mod 2 tests');
 // console.log(words.split(" "));
 // console.log(wordsSplit[2].length);
 
+// function findLongestWord(string) {
+//   // Change code below this 
+  
+//   const wordArray = string.split(" ");
+//   let longestWord = wordArray[0];
+
+//   for (let i = 0; i < wordArray.length; i +=1){
+
+//     if (longestWord.length < wordArray[i].length){
+//       longestWord = wordArray[i];
+//     }
+    
+//   }
+//   return longestWord;
+// }
 
 // 1. Отримали рядок
 // 2. розбили його на слова split(" "). Порівняти довжину кожного слова з найбільшим, попередньо створивши нову змінну яка буде порівнюватись з новим словом, і за виконання умови присвоюватись нове значення. 
@@ -341,8 +381,8 @@ console.log('Mod 2 tests');
 // function createArrayOfNumbers(min, max) {
 //   const numbers = [];
 //   // Change code below this line
-//   for(let i = min; i <= max; i += 1){
-//     total = numbers.push(i);
+//   for ( let i = min; i <= max; i++) {
+//     numbers.push(i);
 //   }
 //   // Change code above this line
 //   return numbers;
@@ -369,18 +409,17 @@ console.log('Mod 2 tests');
 
 
 // function filterArray(numbers, value) {
-//   // Change code below this line
-//   const newArray = []
 
-//   for (let i = 0; i < numbers.length; i +=1){
-  
-//       if(numbers[i] > value){
-//         newArray.push(numbers[i]);
-//       }
-      
+//   const filterNumb = [];
+
+//   for (let i = 0; i < numbers.length; i++){
+
+//     if (numbers[i] > value){
+//       filterNumb.push(numbers[i]);
+//     }
 //   }
-//   return newArray;
-//  // Change code above this line
+//   return filterNumb;
+
 // }
 
 
@@ -404,7 +443,7 @@ console.log('Mod 2 tests');
 //   const array = [];
 
 //   for (let number of array1){
-
+  
 //       if(array2.includes(number)){
 
 //         array.push(number);
@@ -575,6 +614,21 @@ console.log('Mod 2 tests');
 //       }
 //       return false
 // } 
+
+// AND 
+
+// function includes(array, value) {
+//   // Change code below this line
+  
+//   for( let number of array){
+//     if(value === number){
+//       return true
+//     }
+//   }
+//   return false
+//   // Change code above this line
+// }
+
 
 //   includes([1, 2, 3, 4, 5], 17) // //  false
 //   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Jupiter") // //  true

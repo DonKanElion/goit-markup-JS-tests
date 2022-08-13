@@ -468,3 +468,9 @@ function calculateTotalPrice(orderedItems) {
 // };
 
 // 24. ЗАДАЧА. КОРИСТУВАЧІ З ДРУГОМ. Доповни функцію getUsersWithFriend(users, friendName) таким чином, щоб вона повертала масив користувачів, у яких є один з ім'ям в параметрі friendName. Масив друзів користувача зберігається у властивості friends.
+
+const getUsersWithFriend = (users, friendName) => {
+   const friends = getUsersWithFriend.filter(friend => friend.friends)
+   return friends;
+};
+

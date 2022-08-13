@@ -915,4 +915,32 @@ console.log('Mod 3 tests');
     //   },
   
   // };
-  
+
+ // Рішенння Катерина скориної.
+
+//   addPotion (newPotion)  {
+//     for (const potion of this.potions) {
+//       if (potion.name === newPotion.name) {
+//         return `Error! Potion ${potion.name} is already in your inventory!`;
+//       }
+//     }
+//     this.potions.push(newPotion);
+//   },
+// removePotion(potionName) {
+//   for(const potion of this.potions) {
+//     const potionIndex = this.potions.indexOf(potion);
+//     if (potion.name === potionName) {
+//       this.potions.splice(potionIndex, 1);
+//     }
+//   }
+//   return `Potion ${potionName} is not in inventory!`;
+// },
+// updatePotionName (oldName, newName) {
+//   for (const potion of this.potions) {
+//     if (potion.name === oldName) {
+//       potion.name = newName;
+//     }
+//   }
+//   return `Potion ${oldName} is not in inventory!`;
+// },
+//   };
