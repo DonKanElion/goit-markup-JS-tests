@@ -105,17 +105,17 @@ console.log("Mod 4 tests");
 
 // 5. МЕТОД FOREACH(CALLBACK). Функція calculateTotalPrice(orderedItems) приймає один параметр orderedItems - масив чисел, і розраховує загальну суму його елементів, яка зберігається у змінній totalPrice і повертається як результат роботи функції. Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach.
 
-function calculateTotalPrice(orderedItems) {
-  let totalPrice = 0;
-  // Change code below this line
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   // Change code below this line
 
-  orderedItems.forEach(function callback (element, index, array){
+//   orderedItems.forEach(function callback (element, index, array){
     
-    totalPrice += element;
-  })
-  // Change code above this line
-  return totalPrice;
-}
+//     totalPrice += element;
+//   })
+//   // Change code above this line
+//   return totalPrice;
+// }
 
 // 6. ЗАДАЧА. ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ. Функція filterArray(numbers, value) приймає масив чисел numbers і повертає новий масив, в якому будуть тільки ті елементи оригінального масиву, які більші за значення параметра value. Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach.
 

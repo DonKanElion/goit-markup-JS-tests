@@ -212,7 +212,6 @@ console.log('Mod 3 tests');
 
 // function countProps(object) {
 //     let propCount = 0;
-//     // Change code below this line
 //     // console.table(object);
 //     for (const key in object){
 
@@ -222,9 +221,23 @@ console.log('Mod 3 tests');
 //         }
 //         // propCount = propCount.length;   
 //     }
-//     // Change code above this line
 //     return propCount;
 //   }
+
+  // AND
+
+  // function countProps(object) {
+  //   let propCount = 0;
+  
+  //   for ( const key in object){
+  
+  //     if(object.hasOwnProperty(key)){
+  //     propCount +=1;
+  //     }
+  //   }
+  //   return propCount;
+  // }
+  
 
 // 13. МЕТОД OBJECT.KEYS().  Перебери об'єкт apartment, використовуючи метод Object.keys() і цикл for...of. Запиши у змінну keys масив ключів власних властивостей об'єкта apartment, і додай в масив values всі значення його властивостей.
 
@@ -284,13 +297,9 @@ console.log('Mod 3 tests');
 
    // 3 var. 
  
-//    function countProps(object) {
-//     // Change code below this line 
-
-//     return propCount = Object.keys(object).length;
-
-//     // Change code above this line
-//   }
+  //  function countProps(object) {
+  //   return Object.keys(object).length;
+  // }
 
   //  countProps({ name: "Mango", age: 2 }) // //  2
 //  countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }) // //  3
@@ -345,9 +354,6 @@ console.log('Mod 3 tests');
 //     hexColors.push(color.hex);
 //     rgbColors.push(color.rgb)
 //   }
-//   console.log(hexColors);
-//   console.log(rgbColors);
-
   
 // 18. ЗАДАЧА. ПОШУК ОБ'ЄКТА ЗА ЗНАЧЕННЯМ ВЛАСТИВОСТІ. Напиши функцію getProductPrice(productName), яка приймає один параметр productName - назва продукту. Функція шукає об'єкт продукту з таким ім'ям (властивість name) в масиві products і повертає його ціну (властивість price). Якщо продукт з такою назвою не знайдений, функція повинна повертати null.
 
@@ -374,25 +380,27 @@ console.log('Mod 3 tests');
 
 // !!!  19. ЗАДАЧА: КОЛЕКЦІЯ ЗНАЧЕНЬ ВЛАСТИВОСТІ. Напиши функцію getAllPropValues(propName), яка приймає один параметр propName - ім'я (ключ) властивості. Функція повинна повернути масив всіх значень властивості з таким ім'ям з кожного об'єкта в масиві products. Якщо в об'єктах відсутні властивості з таким ім'ям, функція повинна повернути порожній масив.
 
+  
 // const products = [
-//     { name: "Radar", price: 1300, quantity: 4 },
-//     { name: "Scanner", price: 2700, quantity: 3 },
-//     { name: "Droid", price: 400, quantity: 7 },
-//     { name: "Grip", price: 1200, quantity: 9 },
-//   ];
-  
-//   function getAllPropValues(propName) {
-//     const array = [];
-//     for (const product of products){
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
 
-//         if(product[propName]){
-//             array.push(product[propName]);
-//         }
+// function getAllPropValues(propName) {
+//   const values = products;
+//   const arrayVal = [];
 
+//   for (const value of values){
+
+//     if(value[propName]){
+//       arrayVal.push(value[propName]);
 //     }
-//     return array;
 //   }
-  
+//   return arrayVal;
+// }
+
 
 //   getAllPropValues("quantity") // //  [4, 3, 7, 9]
 //   getAllPropValues("price") // //  [1300, 2700, 400, 1200]
@@ -400,23 +408,26 @@ console.log('Mod 3 tests');
 
 // 20. ЗАДАЧА: ЗАГАЛЬНА ВАРТІСТЬ ТОВАРУ. Напиши функцію calculateTotalPrice(productName), яка приймає один параметр productName - назва товару. Функція повинна повернути загальну вартість (ціна * кількість) товару з таким ім'ям з масиву products.
 
-// const products = [
-//     { name: "Radar", price: 1300, quantity: 4 },
-//     { name: "Scanner", price: 2700, quantity: 3 },
-//     { name: "Droid", price: 400, quantity: 7 },
-//     { name: "Grip", price: 1200, quantity: 9 },
-//   ];
-  
-//   function calculateTotalPrice(productName) {
 
-//         for (const product of products){
-           
-//             if(product.name === productName) {
-//                 return result = product.price * product.quantity;
-//             }
-//       }
-//       return total = 0;
+// const products = [
+//   { name: "Radar", price: 1300, quantity: 4 },
+//   { name: "Scanner", price: 2700, quantity: 3 },
+//   { name: "Droid", price: 400, quantity: 7 },
+//   { name: "Grip", price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+
+//     for( const product of products){
+
+//         if (product.name === productName){
+//           return product.price * product.quantity;
+//         }
+      
 //     }
+//   return 0;
+// }
+
 
 // calculateTotalPrice("Blaster") // // 0
 // calculateTotalPrice("Radar") // // 5200
@@ -568,13 +579,18 @@ console.log('Mod 3 tests');
 //     // const todayHigh = forecast.today.high;
 //     // const tomorrowLow = forecast.tomorrow.low;
 //     // const tomorrowHigh = forecast.tomorrow.high;
-//     // After .
+// //     // After .
 
-//     const {today: {low: todayLow, high: todayHigh}, tomorrow: {low: tomorrowLow, high: tomorrowHigh}} = forecast;
+//     const {today: 
+//       {low: todayLow, high: todayHigh}, 
+//       tomorrow: 
+//       {low: tomorrowLow, high: tomorrowHigh}} = forecast;
   
 //     // Change code above this line
 //     return (todayLow + todayHigh + tomorrowLow + tomorrowHigh) / 4;
 //   }
+
+
 
 //  calculateMeanTemperature({ today: {low: 28, high: 32}, tomorrow: {low: 25, high: 29} }) // //  28.5
 //  calculateMeanTemperature({ today: {low: 37, high: 40}, tomorrow: {low: 33, high: 38} }) // //  37
@@ -744,7 +760,7 @@ console.log('Mod 3 tests');
 //         return `Updating book ${oldName} to ${newName}`;
 //     }
 //   };
-  
+
 // check: 
 // Виклик методу bookShelf.updateBook("Sands of dune", "Dune") === рядок "Updating book Sands of dune to Dune"
 
@@ -864,59 +880,54 @@ console.log('Mod 3 tests');
   
 // var. 2
 
-  // const atTheOldToad = {
-  //   potions: [
-  //     { name: "Speed potion", price: 460 },
-  //     { name: "Dragon breath", price: 780 },
-  //     { name: "Stone skin", price: 520 },
-  //   ],
-  //   // Change code below this line
-  //   getPotions() { 
-  //     return this.potions;
-  //   },
+//   const atTheOldToad = {
+//     potions: [
+//       { name: "Speed potion", price: 460 },
+//       { name: "Dragon breath", price: 780 },
+//       { name: "Stone skin", price: 520 },
+//     ],
+//     // Change code below this line
+//     getPotions() { 
+//       return this.potions;
+//     },
 
-  //   addPotion(newPotion) {
+//     addPotion(newPotion) {
 
-  //       for ( const potion in this.potions.name){
-  //         console.log("Potion: ", potion.name);
-  //         console.log("newPorion: ", newPotion.name);
-  //         console.log("this.potions: ", this.potions);
+//         for ( const potion in this.potions.name){
 
-  //         if(potion.name !== newPotion.name){
-  //           return `Error! Potion ${newPotion.name} is already in your inventory!`;
-  //         }
-          
-  //       }
-  //       this.potions.push(newPotion);
-  //       console.log("NEW. this.potions: ", this.potions)
-      
-  //   },
+//           if(potion.name !== newPotion.name){
+//             return `Error! Potion ${newPotion.name} is already in your inventory!`;
+//           } 
+//         }
+//         this.potions.push(newPotion);
 
-    // removePotion(potionName) {
-    //   let potionIndex = 0;
+//     },
+
+//     removePotion(potionName) {
+//       let potionIndex = 0;
   
-    //   for (let potion of this.potions) {
+//       for (let potion of this.potions) {
 
-    //     if(potion.name === potionName){
-    //     potionIndex = this.potions.splice(this.potions.indexOf(potion), 1)
-    //     } 
-    //   }
-    //   return `Potion ${potionName} is not in inventory!`;
-    // },
+//         if(potion.name === potionName){
+//         potionIndex = this.potions.splice(this.potions.indexOf(potion), 1)
+//         } 
+//       }
+//       return `Potion ${potionName} is not in inventory!`;
+//     },
 
-    // updatePotionName(oldName, newName) {
+//     updatePotionName(oldName, newName) {
 
-    //     for (let potion of this.potions){
-    //         if (potion.name === oldName){
-    //             potion.name = newName;
-    //         }
-    //     }
-    //     return `Potion ${oldName} is not in inventory!`;
-    //   },
+//         for (let potion of this.potions){
+//             if (potion.name === oldName){
+//                 potion.name = newName;
+//             }
+//         }
+//         return `Potion ${oldName} is not in inventory!`;
+//       },
   
-  // };
+//   };
 
- // Рішенння Катерина скориної.
+//  // Рішенння Катерина скориної.
 
 //   addPotion (newPotion)  {
 //     for (const potion of this.potions) {
@@ -926,6 +937,7 @@ console.log('Mod 3 tests');
 //     }
 //     this.potions.push(newPotion);
 //   },
+
 // removePotion(potionName) {
 //   for(const potion of this.potions) {
 //     const potionIndex = this.potions.indexOf(potion);
@@ -944,3 +956,71 @@ console.log('Mod 3 tests');
 //   return `Potion ${oldName} is not in inventory!`;
 // },
 //   };
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+
+// for (const key in book) {
+//   // Ключ
+//   console.log('Key: ', key);
+//   // Значення властивості з таким ключем
+//   console.log('[book[key]]: ', book[key]);
+// }
+
+
+// AND
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Dragon breath", price: 780 },
+    { name: "Stone skin", price: 520 },
+  ],
+  // Change code below this line
+  getPotions() {
+    return this.potions;
+  },
+  
+  addPotion(newPotion) {
+    for( const potion of newPotion.name ){
+
+      if(potion.name === newPotion.name){
+
+        return `Error! Potion ${potion.name} is already in your inventory!`;
+      }
+    }
+    return this.potions.push(newPotion);
+  },
+
+  removePotion(potionName) {
+  for (const name of this.potions){
+
+      if(name.name === potionName){
+        const index = this.potions.indexOf(name);
+        return this.potions.splice(index, 1);
+      }
+  }
+      return `Potion ${potionName} is not in inventory!`;
+  },
+
+
+  updatePotionName(oldName, newName) {
+   
+    for (const name of this.potions){
+
+      if(name.name === oldName){
+        const index = this.potions.indexOf(name);
+        console.log(index);
+
+        this.potions.splice(index, 1, newName);
+        console.log(name.name);
+      }
+    }
+
+  },
+  
+};
