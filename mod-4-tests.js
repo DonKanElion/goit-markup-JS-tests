@@ -452,25 +452,116 @@ console.log("Mod 4 tests");
 
 // 22. ЗАДАЧА. КОРИСТУВАЧІ З КОЛЬОРОМ ОЧЕЙ.  Доповни функцію getUsersWithEyeColor(users, color) таким чином, щоб вона повертала масив користувачів, у яких колір очей (властивість eyeColor) збігається зі значенням параметра color.
 
-// const getUsersWithEyeColor = (users, color) => {
- 
-//   const eyeColor = users.filter(user => user.eyeColor === color);
-//   return eyeColor;
-// };
+// const getUsersWithEyeColor = (users, color) =>  users.filter(eye => eye.eyeColor === color)
 
 
 // 23. ЗАДАЧА. КОРИСТУВАЧІ У ВІКОВІЙ КАТЕГОРІЇ.  Доповни функцію getUsersWithAge(users, minAge, maxAge) таким чином, щоб вона повертала масив користувачів, вік яких (властивість age) потрапляє у проміжок від minAge до maxAge.
 
-
-// const getUsersWithAge = (users, minAge, maxAge) => {
-//   const  ageFocus = users.filter(user => (user.age >= minAge && user.age <= maxAge))
-//   return ageFocus;
-// };
+// const getUsersWithAge = (users, minAge, maxAge) => users.filter(user => (user.age > minAge && user.age < maxAge)) ;
 
 // 24. ЗАДАЧА. КОРИСТУВАЧІ З ДРУГОМ. Доповни функцію getUsersWithFriend(users, friendName) таким чином, щоб вона повертала масив користувачів, у яких є один з ім'ям в параметрі friendName. Масив друзів користувача зберігається у властивості friends.
 
-const getUsersWithFriend = (users, friendName) => {
-   const friends = getUsersWithFriend.filter(friend => friend.friends)
-   return friends;
-};
+// 45. ЛАНЦЮЖКИ МЕТОДІВ (ЧЕЙНІНГ, CHAINING).
 
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+// // Change code below this line
+
+// const names = [...books]
+//   .filter(book => book.rating > MIN_BOOK_RATING)
+//   .map(book => book.author)
+//   .sort((a, b) => a.localeCompare(b));
+
+// 46.
+
+// Change code below this 
+const user = [
+  {
+    name: "Moore Hensley",
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
+  },
+  {
+    name: "Sharlene Bush",
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
+  },
+  {
+    name: "Ross Vazquez",
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
+  },
+  {
+    name: "Elma Head",
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
+  },
+  {
+    name: "Carey Barr",
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong", "Adrian Cross"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
+  },
+  {
+    name: "Blackburn Dotson",
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman", "Adrian Cross", "Solomon Fokes"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
+  },
+  {
+    name: "Sheree Anthony",
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
+  }
+]
+const getNamesSortedByFriendCount = users => 
+  [...users].map(user => user.friends.length)
+.sort((a, b) => a.freinds - b.freinds);
